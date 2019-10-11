@@ -1,0 +1,89 @@
+---
+title: "Lab 2"
+author: "Gabriele Hayden"
+date: "October 9, 2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+# Ignore this first code chunk for now.
+
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+1. Run the following code to 
+  (a) install the {nlme} and {janitor} packages
+  (b) load the packages along with the tidyverse, and
+  (c) access and quickly prep some data (from the {nmle} package) for plotting.
+
+```{r data-download, eval = FALSE, echo = TRUE}
+install.packages(c("nlme", "janitor")) # (a)
+library(nlme) # (b)
+library(janitor) # (b)
+library(tidyverse) # (b)
+
+# (c) below
+pd <- Oxboys %>% # start with the Oxboys data
+  clean_names() %>% # function from the janitor package to clean variable names
+  mutate(subject = factor(subject), # make subject a factor
+         occasion = factor(occasion)) %>% # make occasion a factor
+  filter(subject == "10" | subject == "4" | subject == "7") %>% # filter for subjects "10", "4", and "7"
+  as_tibble() # make the data.frame a tibble
+```
+
+1. Reproduce the following two plots, using the *pd* data. You can use whatever theme you want (I used `r theme_minimal()`), but all else should be the same. 
+
+```{r plots1, message = FALSE, warning = FALSE}
+# put script for Plot 1 here
+
+
+
+# put script for Plot 2 here
+
+
+
+```
+
+\newpage
+
+2. Use the *mtcars* dataset from base R to replicate the following plots. (Just type *mtcars* into the console to see the dataset).
+
+```{r plots2}
+# put script for Plot 3 here
+
+
+
+# put script for Plot 4 here
+
+
+
+# put script for Plot 5 here
+
+
+
+# put script for Plot 6 here
+
+
+
+```
+
+\newpage
+
+3. Use the *Orange* dataset, also part of base R, to replicate the following plots.
+   
+```{r orange-plots}
+# put script for Plot 7 here
+
+
+
+# put script for last plot here
+
+
+
+```
+
+When you knit (click the yarn ball icon at the top), it should render as a .pdf. Turning in a .pdf or a .html are both acceptable. Upload the final rendered document to Canvas. (Be sure to put your name up top in the YAML.)
