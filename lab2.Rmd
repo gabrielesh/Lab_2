@@ -39,8 +39,9 @@ pd <- Oxboys %>% # start with the Oxboys data
 
 ```{r plots1, message = FALSE, warning = FALSE}
 # put script for Plot 1 here
-
-
+ggplot(pd, aes(age, height)) +
+  geom_line() +
+  facet_wrap(~subject)
 
 # put script for Plot 2 here
 
