@@ -44,7 +44,10 @@ ggplot(pd, aes(age, height)) +
   facet_wrap(~subject)
 
 # put script for Plot 2 here
-
+p <- ggplot() +
+  geom_line(filter(pd, subject == 10), aes(x = age, y = height), color = "purple") +
+  xlab("Age") +
+  ylab("Height")
 
 
 ```
